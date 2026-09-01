@@ -1,8 +1,8 @@
 import express from "express"
 import carros from "../repository/carro.js"
-const router = express.Router()
 import ControllerCarro from "../controller/carro.js"
 
+const router = express.Router()
 // Buscar todos
 router.get("/buscar", ControllerCarro.Buscar)
 // Buscar Um
