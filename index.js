@@ -9,7 +9,7 @@ app.use(express.json())
 app.use("/api/v1/carro", carro)
 
 database.db
-    .sync({ force: false })                             //  froce true deleta tudo , e o false salva  
+    .sync({ force: false })                             //  se for true deleta tudo , e o false salva  
     .then((_) => {
         app.listen(3000, () => {
             console.log("Servidor rodando na porta 3000")

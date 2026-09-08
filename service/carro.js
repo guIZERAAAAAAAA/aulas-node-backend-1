@@ -39,7 +39,7 @@ class ServiceCarro {
         return carroAlterado
     }
 
-}
+
 
 async Deletar(id) {
     if (!id) {
@@ -49,7 +49,7 @@ async Deletar(id) {
     const carro = await RepositoryCarro.Delete(id)
 
     return id
-}
+}}
 
 
 
