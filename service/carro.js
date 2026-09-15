@@ -38,9 +38,6 @@ class ServiceCarro {
 
         return carroAlterado
     }
-
-}
-
 async Deletar(id) {
     if (!id) {
         throw new Error("Favor informar o ID")
@@ -50,6 +47,9 @@ async Deletar(id) {
 
     return id
 }
+}
+
+
 
 
 
