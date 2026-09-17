@@ -38,12 +38,6 @@ class ServiceCarro {
 
         return carroAlterado
     }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> c5945e9b50e6fccb799de61983a2e2acaff5405a
 async Deletar(id) {
     if (!id) {
         throw new Error("Favor informar o ID")
@@ -52,14 +46,10 @@ async Deletar(id) {
     const carro = await RepositoryCarro.Delete(id)
 
     return id
-<<<<<<< HEAD
 }
 }
 
 
-=======
-}}
->>>>>>> c5945e9b50e6fccb799de61983a2e2acaff5405a
 
 
 
