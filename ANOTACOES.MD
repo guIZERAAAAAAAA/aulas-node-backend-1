@@ -16,4 +16,33 @@ na raiz crie o middleware -> "index.js" = [auth.js]
 npm i bcrypt jsonwebtoken
 
 vamos criar o login 
- 
+ ///////////////////////////////////////////////////////////////////////
+ 18/9/26 Brites> estou revisando os materias para a prova segunda (21/9)
+
+ 1- Primerio passo você ira fazer os npm is
+
+npm init  
+npm install express
+npm sequelize mysql2
+npm i bcrypt jsonwebtoken
+
+depois disso ira mudar no 
+
+***json**
+{
+
+    type:"Module"
+     // No type coloque Module
+
+    "test": "jest",                 
+      // No teste coloque "jeste"
+
+    "dev": "node --watch index.js"    
+     //No dev coloque  "node --watch index.js" // vira outra coisa escrita ai tu coloca isso 
+
+}
+
+2- Segundo você ira criar os Folders e os files ( De acordo com o que o sor pedir !_!)
+
+3- Terceiro você ira fazer nessa ordem 
+
