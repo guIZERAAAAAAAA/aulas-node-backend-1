@@ -4,11 +4,11 @@ import authMiddleware from "../middleware/auth.js"
 
 const router = express.Router()
 
-router.post("/login", authMiddleware, ControllerUsuario.Login)
+router.post("/login",  ControllerUsuario.Login)
 router.get("/buscar", authMiddleware, ControllerUsuario.Buscar)
-router.get("/detalhe/:id", ControllerUsuario.Detalhe)
+router.get("/detalhe/:id", authMiddleware, ControllerUsuario.Detalhe)
 router.post("/criar", ControllerUsuario.Criar)
-router.put("/alterar/:id", ControllerUsuario.Alterar)
-router.delete("/deletar/:id", ControllerUsuario.Deletar)
+router.put("/alterar/:id", authMiddleware, ControllerUsuario.Alterar)
+router.delete("/deletar/:id", authMiddleware ,ControllerUsuario.Deletar)
 
 export default router

@@ -15,7 +15,7 @@ class RepositoryUsuario {
     return usuarioDetalhes
   }
 
-  async Create() {
+  async Create(email,senha) {
 
     const usuarioCreate = await usuario.create({ email, senha })
 
