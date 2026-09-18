@@ -29,52 +29,62 @@ class ServiceUsuario {
         if (!email || !senha) {
             throw new Error("Favor informar todos os dados")
         }
-        const usuario = await RepositoryUsuario.Create(email, senha)
+
+        const senhaCripto = await bcrypt.hash(senha, 12)
+
+        const usuario = await RepositoryUsuario.Create(email, senhaCripto)
 
         return usuario
+
     }
 
     async Alterar(id, email, senha) {
         if (!id || !email || !senha) {
             throw new Error("Favor informar os dados");
         }
+
+        const senhaCripto = !senha // ternario
+            ? undefined //se sim 
+            : await bcrypt.hash(senha, 12)//se não
+
         const usuarioAlterado = await RepositoryUsuario.Update(id, email, senha)
 
         return usuarioAlterado
     }
-async Deletar(id) {
-    if (!id) {
-        throw new Error("Favor informar o ID")
+    async Deletar(id) {
+        if (!id) {
+            throw new Error("Favor informar o ID")
+        }
+
+        const usuario = await RepositoryUsuario.Delete(id)
+
+        return id
     }
 
-    const usuario = await RepositoryUsuario.Delete(id)
+    async Login(email, senha) {
+        if (!email || !senha) {
+            throw new Error("Email ou senhas invalidos ")
+        }
 
-    return id
-}
+        const usuario = await RepositoryUsuario.findByid(email)
 
-async Login (email, senha ){
-    if(!email||!senha){
-        throw new Error("Email ou senhas invalidos ")
+        if (!usuario) {
+            throw new Error(" Email ou senha invalido ")
+        }
+
+        if (
+            !(await bcrypt.compare(String(senha), usuario.senha))
+        ) {
+            throw new Error(" Email ou senha invalido ")
+        }
+
+        return jwt.sign({
+            id: usuario.id, email
+        },
+            segredo,
+            { expiresIn: 60 * 60 }
+        )
     }
-
-    const usuario = await RepositoryUsuario.findByid(email)
-
-    if(!usuario) {
-        throw new Error (" Email ou senha invalido ")
-    }
-
-    if(
-        !(await bcrypt.compare(String(senha),usuario.senha))
-    ){
-        throw new Error (" Email ou senha invalido ")
-    }
-
-    return jwt.sign({
-        id: usuario.id,email},
-        segredo,
-        { expiresIn: 60 * 60 }
-    )
-}
 
 }
 
