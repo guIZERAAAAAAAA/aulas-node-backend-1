@@ -44,5 +44,7 @@ depois disso ira mudar no
 
 2- Segundo você ira criar os Folders e os files ( De acordo com o que o sor pedir !_!)
 
-3- Terceiro você ira fazer nessa ordem 
+3- depois de fazer o cotrol e o service voce ira fazer o middleware e o service e o router ai faz o login e algumas mias coisas 
 
+
+// 
