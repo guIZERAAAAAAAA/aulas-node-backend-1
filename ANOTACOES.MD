@@ -47,4 +47,23 @@ depois disso ira mudar no
 3- depois de fazer o cotrol e o service voce ira fazer o middleware e o service e o router ai faz o login e algumas mias coisas 
 
 
-// 
+// 21/9/26
+
+_index.js >_
+
+*** Somente nesses aqui você importar o express ***
+
+
+ aqui voce ira importar o express 
+
+e todos os index.js ( ou o nome que  o sor passar )do folders
+
+agora pestr atenção 
+
+o import do carro você ira importar do /ROUTER/CARRO.js
+a mesma coisa com os usuarios /ROUTER/USUARIOS.js
+
+
+_router >_
+
+

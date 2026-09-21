@@ -6,8 +6,7 @@ class ServiceCarro {
     async Buscar() {
         return RepositoryCarro.Find()
     }
-
-    Detalhe(id) {
+          Detalhe(id) {
         if (!id) {
             throw new Error("Favor informar o ID")
         }
@@ -19,8 +18,7 @@ class ServiceCarro {
         }
 
         return carro
-    }
-    // Função(parametros, parametros, parametros)
+    }                                                 // Função(parametros, parametros, parametros)
     async Criar(marca, ano) {
         if (!marca || !ano) {
             throw new Error("Favor informar todos os dados")
@@ -29,7 +27,6 @@ class ServiceCarro {
 
         return carro
     }
-
     async Alterar(id, marca, ano) {
         if (!id || !marca || !ano) {
             throw new Error("Favor informar os dados");
@@ -38,15 +35,15 @@ class ServiceCarro {
 
         return carroAlterado
     }
-async Deletar(id) {
-    if (!id) {
-        throw new Error("Favor informar o ID")
+    async Deletar(id) {
+        if (!id) {
+            throw new Error("Favor informar o ID")
+        }
+
+        const carro = await RepositoryCarro.Delete(id)
+
+        return id
     }
-
-    const carro = await RepositoryCarro.Delete(id)
-
-    return id
-}
 }
 
 
